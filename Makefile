@@ -2,23 +2,28 @@ NAME = fractal
 
 SRCS =	main.c\
 		fractal.c\
-		mandelbrot.c
+		make_set.c\
+		fractal_utils.c
 
 OBJS = $(SRCS:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 AR = ar rcs
 
+MINILIBX	=	libmlx.dylib
+
 all: $(NAME)
 
-$(NAME): #$(OBJS)
-	$(CC) $(CFLAGS) $(SRCS) libmlx.dylib -o $(NAME)
-#$(CC) $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-#-lmlx -framework OpenGL -framework AppKit
+$(NAME): $(OBJS) $(LIBFT) $(MINILIBX)
+	$(CC) $(OBJS) $(CFLAGS) $(MINILIBX) -o $@
 
 .c.o:
-	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(DEBUG):
+	make all
+	$(CC) $(OBJS) $(CFLAGS_DEBUG) $(MINILIBX) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS) $(B_OBJS)	
