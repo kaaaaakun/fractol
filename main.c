@@ -6,7 +6,7 @@
 /*   By: tokazaki <tokazaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 19:01:54 by tokazaki          #+#    #+#             */
-/*   Updated: 2023/07/12 10:51:51 by tokazaki         ###   ########.fr       */
+/*   Updated: 2023/07/12 11:03:14 by tokazaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	my_atof(char *chr, double *num)
 	i = 0;
 	if (5 < ft_strlen(chr))
 		return (0);
-	if(chr[i] == '-')
+	if (chr[i] == '-')
 		i++;
 	while ('0' <= chr[i] && chr[i] <= '9')
 		i++;
