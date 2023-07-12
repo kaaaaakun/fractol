@@ -6,7 +6,7 @@
 /*   By: tokazaki <tokazaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 19:01:54 by tokazaki          #+#    #+#             */
-/*   Updated: 2023/07/10 00:54:42 by tokazaki         ###   ########.fr       */
+/*   Updated: 2023/07/12 10:51:51 by tokazaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,31 +46,19 @@ int	my_atof(char *chr, double *num)
 	i = 0;
 	if (5 < ft_strlen(chr))
 		return (0);
-	while (chr[i])
-	{
-		if (!('0' <= chr[i] && chr[i] <= '9') && chr[i] != '-')
-			return (0);
+	if(chr[i] == '-')
 		i++;
-	}
+	while ('0' <= chr[i] && chr[i] <= '9')
+		i++;
+	if (chr[i] != '\0')
+		return (0);
 	*num = (double)ft_atoi(chr) / 1000;
 	return (1);
 }
 
 int	error_massage(void)
 {
-	printf("Please enter correct value\n	m = Mandelbrot\n\
-	j = Julia\n	EX: ./fractal j -345 654\n");
+	ft_putstr_fd("Please enter correct value\n	m = Mandelbrot\n\
+	j = Julia\n	EX: ./fractal j -345 654\n", 1);
 	return (0);
-}
-
-size_t	ft_strlen(const char *src)
-{
-	size_t	i;
-
-	if (!src)
-		return (0);
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
 }

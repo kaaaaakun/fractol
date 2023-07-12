@@ -6,7 +6,7 @@
 /*   By: tokazaki <tokazaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:46:27 by tokazaki          #+#    #+#             */
-/*   Updated: 2023/07/10 00:53:43 by tokazaki         ###   ########.fr       */
+/*   Updated: 2023/07/12 10:18:28 by tokazaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <ctype.h>
 # include <unistd.h>
 # include <limits.h>
+# include "libft.h"
 
 # define MANDEL 1
 # define JULIA 2
@@ -59,7 +60,4 @@ int		error_massage(void);
 int		my_atof(char *chr, double *num);
 void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color);
 
-size_t	ft_strlen(const char *src);
-int		ft_atoi(const char *str);
-int		ft_isdigit(int c);
 #endif

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractal_utils.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tokazaki <tokazaki@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: tokazaki <tokazaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 00:40:22 by tokazaki          #+#    #+#             */
-/*   Updated: 2023/07/10 00:47:26 by tokazaki         ###   ########.fr       */
+/*   Created: 2023/05/16 16:52:37 by tokazaki          #+#    #+#             */
+/*   Updated: 2023/06/04 14:28:51 by tokazaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "libft.h"
 
 static int				ft_isspace(int c);
 static long long int	minus_atoi(const char *str);
@@ -85,11 +85,12 @@ static long long int	minus_atoi(const char *str)
 	}
 	return (result);
 }
-
-int	ft_isdigit(int c)
-{
-	if ('0' <= c && c <= '9')
-		return (1);
-	else
-		return (0);
-}
+//intをcharに変換
+//40:スペース系のものをスキップ
+//30:intの値の±を判定して、それぞれ別の関数に飛ばす
+//49,69:±をcharに変換する機構
+//60,80:LONG_MAX/LONG_MINをオーバーフローして時は
+//		オーバーフロー前の値を返すので、
+//		その仕様に倣って実装
+//※どのみち返り値はintなので、longからintにキャストした時点で
+//intでオーバーフローした値は変な感じにはなる。

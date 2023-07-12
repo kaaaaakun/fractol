@@ -6,7 +6,7 @@
 /*   By: tokazaki <tokazaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:50:16 by tokazaki          #+#    #+#             */
-/*   Updated: 2023/07/10 00:11:36 by tokazaki         ###   ########.fr       */
+/*   Updated: 2023/07/12 10:47:54 by tokazaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	key_hook(int keycode, t_vars *vars)
 	if (keycode == 123)
 	{
 		vars->color += 10;
-		vars->hor += 25;
+		vars->hor -= 25;
 	}
 	if (keycode == 124)
 	{
 		vars->color += 10;
-		vars->hor -= 25;
+		vars->hor += 25;
 	}
 	if (keycode == 126)
 	{
@@ -49,9 +49,13 @@ int	mouse_hook(int button, int x, int y, t_vars *vars)
 	if (vars->mag == 0.0)
 		vars->mag = 0.000001;
 	if (button == 4)
+	{
 		vars->mag *= 1.2;
+	}
 	else if (button == 5)
+	{
 		vars->mag *= 0.8;
+	}
 	else
 		return (0);
 	img_put_m(vars);
