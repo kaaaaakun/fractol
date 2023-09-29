@@ -1,7 +1,7 @@
-NAME = fractal
+NAME = fractol
 
 SRCS =	main.c\
-		fractal.c\
+		fractol.c\
 		make_set.c
 
 OBJS = $(SRCS:.c=.o)

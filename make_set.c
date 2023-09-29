@@ -6,11 +6,11 @@
 /*   By: tokazaki <tokazaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:55:38 by tokazaki          #+#    #+#             */
-/*   Updated: 2023/07/09 22:47:33 by tokazaki         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:22:32 by tokazaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "fractol.h"
 
 void	make_julia(double cre, double cim)
 {

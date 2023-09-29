@@ -6,11 +6,11 @@
 /*   By: tokazaki <tokazaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 19:01:54 by tokazaki          #+#    #+#             */
-/*   Updated: 2023/07/12 11:03:14 by tokazaki         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:22:31 by tokazaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractal.h"
+#include "fractol.h"
 
 //__attribute__((destructor))
 //static void destructor() {
